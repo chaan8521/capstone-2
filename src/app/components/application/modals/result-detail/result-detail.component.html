@@ -1,0 +1,17 @@
+ <p-table [value]="evaluationResult"   [paginator]="true" [rows]="10"
+        [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Question</th>
+                <th>Subject</th>
+                <th>Score</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-result>
+            <tr>
+                <td>{{ result.question_description }}</td>
+                <td>{{ result.subject_title }}</td>
+                <td>{{ result.score }}</td>
+            </tr>
+        </ng-template>
+    </p-table>

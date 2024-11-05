@@ -1,0 +1,100 @@
+<div class="container max-w-full">
+  <div class="grid">
+    <div
+      class="col-12 flex justify-content-center align-items center flex-column p-2"
+    >
+      <div class="col-12">
+        <form [formGroup]="userForm">
+          <div class="p-fluid">
+            <div class="field">
+              <p-floatLabel>
+                <input
+                  id="name"
+                  type="text"
+                  pInputText
+                  formControlName="name"
+                  name="name"
+                />
+                <label for="name">name</label><br />
+                <small
+                  *ngIf="
+                    userForm.controls.name.touched &&
+                    userForm.controls.name.invalid
+                  "
+                  class="error-message"
+                  >This field is required</small
+                >
+              </p-floatLabel>
+            </div>
+            <div class="field">
+              <p-floatLabel>
+                <input
+                  id="email"
+                  type="text"
+                  pInputText
+                  formControlName="email"
+                  name="email"
+                />
+                <label for="email">email</label><br />
+                <small
+                  *ngIf="
+                    userForm.controls.email.touched &&
+                    userForm.controls.email.invalid
+                  "
+                  class="error-message"
+                  >This field is required</small
+                >
+              </p-floatLabel>
+            </div>
+            <div class="field">
+              <p-dropdown
+                formControlName="department_id"
+                [options]="departments"
+                optionLabel="department"
+                optionValue="id"
+                placeholder="Department"
+              />
+            </div>
+            <div class="field">
+              <p-dropdown
+                formControlName="type"
+                [options]="typeOptions"
+                optionLabel="label"
+                optionValue="value"
+                placeholder="type"
+              />
+            </div>
+            <div class="field">
+              <p-floatLabel>
+                <p-dropdown
+                  formControlName="status"
+                  [options]="systemTables"
+                  optionLabel="status"
+                  optionValue="status"
+                  placeholder="Select a status"
+                />
+                <label for="status">Status</label><br />
+                <small
+                  *ngIf="
+                    userForm.controls.status.touched &&
+                    userForm.controls.status.invalid
+                  "
+                  class="error-message"
+                  >This field is required</small
+                >
+              </p-floatLabel>
+            </div>
+            <div class="btn-systemTable col-12">
+              <p-button
+                label="Save"
+                (onClick)="save()"
+                class="info-button p-button-sm w-full outline-none"
+                [disabled]="userForm.invalid"
+              ></p-button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

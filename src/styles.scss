@@ -1,0 +1,170 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "../src/assets/layout/main.scss";
+
+/* PrimeNG */
+@import "../node_modules/primeng/resources/primeng.min.css";
+@import "../node_modules/primeflex/primeflex.scss";
+@import "../node_modules/primeicons/primeicons.css";
+
+
+.spinner-container {
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  height: 100vh; 
+  width: 100%; 
+  position: absolute; 
+  top: 0; 
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 1000; 
+}
+
+.error-message{
+  color: #ff3333;
+}
+  
+
+.container {
+    width: 100%;
+    padding: 10px;
+    height: auto !important;
+  }
+  
+  .p-button {
+    box-shadow: none !important;
+  }
+  
+  .p-button:focus {
+    box-shadow: none !important;
+  }
+  
+  .p-inputtext:enabled:focus {
+    border-color: none !important;
+    box-shadow: none !important;
+  }
+  
+  .p-panelmenu:focus {
+    box-shadow: none !important;
+  }
+  
+  .p-panelmenu .p-panelmenu-header:not(.p-highlight):not(.p-disabled)>a {
+    color: #fff !important;
+    border: none !important;
+  }
+  
+  .p-panelmenu .p-panelmenu-header:not(.p-highlight):not(.p-disabled)>a:hover {
+    color: var(--primary-color) !important;
+  }
+  
+  .p-panelmenu .p-panelmenu-header > a:focus {
+    box-shadow: none !important;
+  }
+  
+  .p-panelmenu .p-panelmenu-header > a {
+    color: var(--primary-color) !important;
+    font-weight: 400 !important;
+    border: none !important;
+    box-shadow: none;
+  }
+  
+  .p-panelmenu .p-panelmenu-header > a:hover {
+    color: var(--primary-color) !important;
+    font-weight: 400 !important;
+    border: none !important;
+    box-shadow: none;
+  }
+  
+  .p-panelmenu .p-panelmenu-content {
+    box-shadow: none !important;
+    border-color: transparent !important;
+  }
+  .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link .p-menuitem-text {
+    padding: 0.75rem 0.50rem 0.75rem 3.25rem !important;
+    border-radius: 0 !important;
+    font-size: 12px !important;
+    box-shadow: none !important;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  .p-menuitem-text{
+    color: darkblue;
+  }
+  
+  .card {
+    background: var(--surface-e);
+    padding: 2rem;
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    border-radius: 4px;
+    margin-bottom: 2rem;
+  
+    .card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+  }
+  
+  .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  
+  .p-tabview .p-tabview-nav li:not(.p-highlight):not(.p-disabled):hover .p-tabview-nav-link {
+    outline: none !important;
+  }
+  
+  /* selected */
+  .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+    box-shadow: none !important;
+  }
+  
+  .p-tabview .p-tabview-nav>li.p-tabview-ink-bar {
+    outline: none !important;
+  }
+  
+  .p-progressbar .p-progressbar-value {
+    background-color: var(--teal-500) !important;
+  }
+  
+  .custom-1 .p-progressbar .p-progressbar-value {
+    background-color: var(--primary-600) !important;
+  }
+  .custom-2 .p-progressbar .p-progressbar-value {
+    background-color: var(--teal-600) !important;
+  }
+  .custom-3 .p-progressbar .p-progressbar-value {
+    background-color: var(--bluegray-600) !important;
+  }
+  .custom-4 .p-progressbar .p-progressbar-value {
+    background-color: var(--cyan-600) !important;
+  }
+  .custom-5 .p-progressbar .p-progressbar-value {
+    background-color: var(--red-600) !important;
+  }
+  .custom-6 .p-progressbar .p-progressbar-value {
+    background-color: var(--indigo-600) !important;
+  }
+  .custom-7 .p-progressbar .p-progressbar-value {
+    background-color: var(--green-600) !important;
+  }
+  .custom-8 .p-progressbar .p-progressbar-value {
+    background-color: var(--orange-600) !important;
+  }
+  .custom-9 .p-progressbar .p-progressbar-value {
+    background-color: var(--yellow-600) !important;
+  }
+  .custom-10 .p-progressbar .p-progressbar-value {
+    background-color: var(--purple-600) !important;
+  }
+  .custom-11 .p-progressbar .p-progressbar-value {
+    background-color: var(--pink-600) !important;
+  }
+  .custom-12 .p-progressbar .p-progressbar-value {
+    background-color: var(--gray-600) !important;
+  }
+  
+  .p-progressbar .p-progressbar-value .p-progressbar-label{
+    color: white !important;
+  }

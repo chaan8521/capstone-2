@@ -1,0 +1,39 @@
+    <div *ngIf="!isComponentShown" class="spinner-container">
+        <p-progressSpinner styleClass="w-4rem h-4rem" strokeWidth="8" fill="var(--surface-ground)"
+            animationDuration=".5s" />
+    </div>
+
+    <div class="table-container" *ngIf="isComponentShown">
+        <div class="table-header">
+            <div class="table-header-content">
+                <h3>{{header}}</h3>
+        
+                
+                    <button pButton type="button" label="Add" icon="pi pi-plus" class="p-button-raised p-button-success p-button-sm custom-button" (click)="create()"></button>
+
+            
+        
+            </div>
+        </div>
+        <p-table [value]="questionaireList" [loading]="loading" [lazy]="false" [paginator]="true" [rows]="10"
+            [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th style="width:10%">Edit</th>
+                    <th style="width:10%">Delete</th>
+
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-product>
+                <tr>
+                    <td>{{ product.description }}</td>
+                    <td>{{ product.status }}</td>
+                    <td><button pButton type="button" label="Edit" icon="pi pi-plus" class="p-button-raised p-button-success p-button-sm custom-button" (click)="update(product)"></button></td>
+                    <td><button pButton type="button" label="Delete" icon="pi pi-plus" class="p-button-raised p-button-danger p-button-sm " (click)="delete(product)"></button></td>
+
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>

@@ -1,0 +1,53 @@
+<div class="container max-w-full">
+    <div class="grid">
+      <div class="col-12 flex justify-content-center align-items center flex-column p-2">
+        <div class="col-12">
+          <form [formGroup]="subjectForm">
+            <div class="p-fluid">
+              <div class="field">
+                <p-floatLabel>
+                  <input id="subjectCode" type="text" pInputText formControlName="subjectCode"
+                    name="subjectCode" />
+                  <label for="subjectCode">Subject Code</label><br>
+                  <small
+                    *ngIf="subjectForm.controls.subjectCode.touched && subjectForm.controls.subjectCode.invalid"
+                    class="error-message">This field is required</small>
+                </p-floatLabel>
+              </div>
+              <div class="field">
+                <p-floatLabel>
+                  <input id="descriptiveTitle" type="text" pInputText formControlName="descriptiveTitle"
+                    name="descriptiveTitle" />
+                  <label for="descriptiveTitle">Descriptive Title</label><br>
+                  <small
+                    *ngIf="subjectForm.controls.descriptiveTitle.touched && subjectForm.controls.descriptiveTitle.invalid"
+                    class="error-message">This field is required</small>
+                </p-floatLabel>
+              </div>
+              <div class="field">
+                <p-dropdown formControlName="unit" [options]="systemTables" optionLabel="unit" optionValue="unit"
+                  placeholder="Select a unit" />
+                <small
+                    *ngIf="subjectForm.controls.unit.touched && subjectForm.controls.unit.invalid"
+                    class="error-message">This field is required</small>
+              </div>
+              <div class="field">
+                <p-floatLabel>
+                  <input id="room" type="text" pInputText formControlName="room"
+                    name="room" />
+                  <label for="room">Room</label><br>
+                  <small
+                    *ngIf="subjectForm.controls.room.touched && subjectForm.controls.room.invalid"
+                    class="error-message">This field is required</small>
+                </p-floatLabel>
+              </div>
+              <div class="btn-systemTable col-12">
+                  <p-button label="Save" (onClick)="save()"
+                  class="info-button p-button-sm w-full outline-none" [disabled]="subjectForm.invalid"></p-button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    

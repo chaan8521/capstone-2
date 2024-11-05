@@ -1,0 +1,11 @@
+<div class="layout-topbar">
+    <a class="menu-button" (click)="onMenuButtonClick($event)" >
+      <i class="pi pi-bars"></i>
+    </a>
+    <a routerLink="#" class="text-base text-primary font-bold p-2 company">
+      <!-- <img src="assets/title.png" alt="image" style="width: 150px; "> -->
+    </a>
+    <ul class="topbar-menu">
+      <li class="topbar-submenu-header text-md"><span class="text-sm"> {{ dateToday | date: 'EEEE - MMMM d, y h:mm a'  }} </span> </li>
+    </ul>
+  </div>

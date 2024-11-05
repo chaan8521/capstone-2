@@ -1,0 +1,70 @@
+<div class="container max-w-full">
+  <div class="grid">
+    <div class="col-12 flex justify-content-center align-items-center flex-column p-2">
+      <div class="col-12">
+        <form [formGroup]="scheduleForm">
+          <div class="p-fluid">
+            <div class="field mb-3"> 
+              <p-floatLabel>
+                <input id="edpCode" type="text" pInputText formControlName="edpCode" name="edpCode" />
+                <label for="edpCode">EDP Code</label><br />
+                <small *ngIf="scheduleForm.controls.edpCode.touched && scheduleForm.controls.edpCode.invalid" class="error-message">This field is required</small>
+              </p-floatLabel>
+            </div>
+            <div class="field mb-3"> 
+              <p-floatLabel>
+                <input id="offeringCode" type="text" pInputText formControlName="offeringCode" name="offeringCode" />
+                <label for="offeringCode">Offering Code</label><br />
+                <small *ngIf="scheduleForm.controls.offeringCode.touched && scheduleForm.controls.offeringCode.invalid" class="error-message">This field is required</small>
+              </p-floatLabel>
+            </div>
+            <div class="field mb-3"> 
+              <p-dropdown 
+                formControlName="subject_Id" 
+                [options]="subjects"
+                optionLabel="subject"
+                optionValue="id"
+                placeholder="Select a Subject" />
+                <small *ngIf="scheduleForm.controls.subject_Id.touched && scheduleForm.controls.subject_Id.invalid" class="error-message">This field is required</small>
+            </div>
+            <div class="field mb-3"> 
+              <p-floatLabel>
+                <p-dropdown formControlName="day" [options]="systemTables" optionLabel="day" optionValue="day"
+    placeholder="Select a Day" />
+                <label for="day">Day</label><br />
+                <small *ngIf="scheduleForm.controls.day.touched && scheduleForm.controls.day.invalid" class="error-message">This field is required</small>
+              </p-floatLabel>
+            </div>
+            <div class="field mb-3"> 
+            
+              <label for="timeIn">Time In</label><br />
+                <input id="timeIn" type="time" pInputText formControlName="timeIn" name="timeIn" />
+                <small *ngIf="scheduleForm.controls.timeIn.touched && scheduleForm.controls.timeIn.invalid" class="error-message">This field is required</small>
+          
+            </div>
+            <div class="field mb-3"> 
+              
+              <label for="timeOut">Time Out</label><br />
+                <input id="timeOut" type="time" pInputText formControlName="timeOut" name="timeOut" />
+                <small *ngIf="scheduleForm.controls.timeOut.touched && scheduleForm.controls.timeOut.invalid" class="error-message">This field is required</small>
+            
+            </div>
+            <div class="field mb-3" > 
+              <p-dropdown 
+                formControlName="user_Id" 
+                [options]="users"
+                optionLabel="name"
+                optionValue="id"
+                placeholder="Select a Teacher" />
+                <small *ngIf="scheduleForm.controls.user_Id.touched && scheduleForm.controls.user_Id.invalid" class="error-message">This field is required</small>
+                <div *ngIf="!isComponentShown">Loading teachers...</div>
+            </div>
+            <div class="btn-systemTable col-12">
+              <p-button label="Save" (onClick)="save()" class="info-button p-button-sm w-full outline-none" [disabled]="scheduleForm.invalid"></p-button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
